@@ -22,7 +22,8 @@ $router->group(['prefix' => 'puisi'], function () use ($router)
     $router->post('hapus-puisi/{id}', 'PuisiController@deletePuisi');
 });
 
-
-// $router->group(['prefix' => 'puisi'], function () {
-//     $router->get('')
-// });
+$router->group(['prefix' => 'auth'], function () use ($router)
+{
+    $router->post("/register", "AuthController@register");
+    $router->post("/login", "AuthController@login");
+});
